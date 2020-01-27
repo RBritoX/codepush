@@ -80,11 +80,15 @@ export default class Home extends Component {
                         <Avatar source={{uri: item.avatar}} />
                         <Name>{item.name}</Name>
                         <Login>{item.login}</Login>
-                        <Bio>{item.bio}</Bio>
-                        <Location>
-                           <Icon name="map-marker" size={16} /> {item.location}
-                        </Location>
 
+                        {item.bio !== null && <Bio>{item.bio}</Bio>}
+
+                        {item.location !== null && (
+                           <Location>
+                              <Icon name="map-marker" size={16} />{' '}
+                              {item.location}
+                           </Location>
+                        )}
                         <ProfileButtom onPress={() => {}}>
                            <Icon name="github" size={20} />
                         </ProfileButtom>
